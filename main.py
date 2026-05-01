@@ -70,7 +70,30 @@ def delete_contact():
 print("5. Search Contact")
 print("6. Delete Contact") 
 
-elif choice == "5":
-search_contact()
-elif choice == "6":
-    delete_contact()
+while True:
+    print("\n1. Create Contact")
+    print("2. Add Contact")
+    print("3. View Contacts")
+    print("4. Update Contact")
+    print("5. Search Contact")
+    print("6. Delete Contact")
+    print("7. Exit")
+
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        create_contact()
+    elif choice == "2":
+        add_contact()
+    elif choice == "3":
+        view_contacts()
+    elif choice == "4":
+        update_contact()
+    elif choice == "5":
+        search_contact()
+    elif choice == "6":
+        delete_contact()
+    elif choice == "7":
+        break
+    else:
+        print("Invalid choice")
