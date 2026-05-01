@@ -15,3 +15,8 @@ def add_contact():
         file.write(f"{name} - {number}\n")
 
     print("Added!")
+
+def view_contacts():
+    with open("contacts.txt", "r") as file:
+        for line in file:
+            print(line.strip())
