@@ -37,4 +37,40 @@ def update_contact():
     with open("contacts.txt", "w") as file:
         file.writelines(lines)
 
-    print("Updated!")            
+    print("Updated!")      
+
+def search_contact():
+    name = input("Enter name to search: ")
+
+    with open("contacts.txt", "r") as file:
+        found = False
+        for line in file:
+            if name in line:
+                print(line.strip())
+                found = True
+
+        if not found:
+            print("Contact not found.")
+
+def delete_contact():
+    name = input("Enter name to delete: ")
+
+    lines = []
+
+    with open("contacts.txt", "r") as file:
+        for line in file:
+            if name not in line:
+                lines.append(line)
+
+    with open("contacts.txt", "w") as file:
+        file.writelines(lines)
+
+    print("Contact deleted!")
+
+print("5. Search Contact")
+print("6. Delete Contact") 
+
+elif choice == "5":
+search_contact()
+elif choice == "6":
+    delete_contact()
